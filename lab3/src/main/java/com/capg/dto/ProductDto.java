@@ -1,19 +1,13 @@
 package com.capg.dto;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
 public class ProductDto 
 {
-	private int id;
-	private String name;
-	private double price;
 	
-	public int getId()
-	{
-		return id;
-	}
-	public void setId(int id)
-	{
-		this.id = id;
-	}
+	private String name;
 	
 	public String getName()
 	{
@@ -23,6 +17,10 @@ public class ProductDto
 	{
 		this.name = name;
 	}
+	
+	
+	
+	private double price;
 	
 	public double getPrice() 
 	{

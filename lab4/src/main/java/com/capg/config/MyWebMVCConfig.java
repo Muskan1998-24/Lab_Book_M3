@@ -24,7 +24,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("org.cap")// this will scan for spring bean classes
+@ComponentScan("com.capg")// this will scan for spring bean classes
 @EnableTransactionManagement
 @PropertySource("classpath:orm.properties")
 public class MyWebMVCConfig {
@@ -46,7 +46,7 @@ public class MyWebMVCConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("org.cap");// this will scan for jpa entity classes
+        em.setPackagesToScan("com.capg");// this will scan for jpa entity classes
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
         em.setJpaProperties(ormProperties());

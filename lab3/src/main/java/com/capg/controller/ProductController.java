@@ -43,12 +43,11 @@ public class ProductController
 	    }
 	    
 	    @GetMapping("/processregister")
-	    public ModelAndView registerCustomer(@RequestParam("productid") int id,@RequestParam("name") String name,@RequestParam("price") double price) 
+	    public ModelAndView registerCustomer(@RequestParam("name") String name,@RequestParam("price") double price) 
 	    {
 	        Product product=new Product();
 	        product.setName(name);
 	        product.setPrice(price);
-	        product.setId(id);
 	        product=service.save(product);
 	        return new ModelAndView("productdetails","product",product);
 	       

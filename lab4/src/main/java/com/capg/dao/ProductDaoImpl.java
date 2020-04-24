@@ -19,23 +19,37 @@ public class ProductDaoImpl implements IProductDao
         return entityManager;
     }
     
-    @Override
-	public Product findProductById(int id) {
+    
+    @PersistenceContext //this is equal to autowired
+    public void setEntityManager(EntityManager entityManager)
+    {
+        this.entityManager = entityManager;
+    }
+    
+    
+	@Override
+	public Product findProductById(int id)
+	{
 		Product product=entityManager.find(Product.class, id);
 		return product;
 	}
+	
 	@Override
-	public Product save(Product product) {
+	public Product save(Product product) 
+	{
 		product=getEntityManager().merge(product);
 		return product;
 	}
+	
 	@Override
-	public List<Product> showAllProducts() {
+	public List<Product> showAllProducts()
+	{
 		String jql="from Product";
 		TypedQuery<Product> query=entityManager.createQuery(jql, Product.class);
 		List<Product> list=query.getResultList();
 		return list;
 	}
+	
 	@Override
 	public boolean remove(int id) {
 		Product product=findProductById(id);

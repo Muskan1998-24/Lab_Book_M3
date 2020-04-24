@@ -12,6 +12,7 @@
 
 Product Id is  <c:out value="${product.id}"/>
 Product Name is <c:out value="${product.name}"/>
+Product Price is <c:out value="${product.price}"/>
 
 <br>
 </c:forEach>
