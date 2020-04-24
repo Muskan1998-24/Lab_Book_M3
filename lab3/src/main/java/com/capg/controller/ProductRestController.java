@@ -63,7 +63,7 @@ import com.capg.service.IProductService;
 		return response;
 	}
 	
-	@DeleteMapping("products/delete/{id}")
+	@DeleteMapping("/products/delete/{id}")
 	public ResponseEntity<Boolean> deleteProduct(@PathVariable("id") int id )
 	{
 		boolean result=service.remove(id);
